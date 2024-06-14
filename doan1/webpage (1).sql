@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 22, 2024 lúc 06:01 PM
--- Phiên bản máy phục vụ: 10.4.28-MariaDB
--- Phiên bản PHP: 8.0.28
+-- Thời gian đã tạo: Th6 14, 2024 lúc 10:52 AM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -38,7 +38,16 @@ CREATE TABLE `giftcode` (
 --
 
 INSERT INTO `giftcode` (`giftCodeId`, `giftCode`, `limit_count`) VALUES
-(2, 'LQMB001', 4);
+(8, 'LQMB001', 3),
+(9, 'LQMB002', 5),
+(10, 'LQMB003', 8),
+(11, 'LQMB004', 7),
+(12, 'LQMB005', 50),
+(13, 'LQMB006', 17),
+(14, 'LQMB007', 43),
+(15, 'LQMB008', 32),
+(16, 'LQMB009', 33),
+(17, 'LQMB010', 9);
 
 -- --------------------------------------------------------
 
@@ -52,14 +61,6 @@ CREATE TABLE `news` (
   `image` varchar(255) NOT NULL,
   `news_category` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Đang đổ dữ liệu cho bảng `news`
---
-
-INSERT INTO `news` (`news_id`, `title`, `image`, `news_category`) VALUES
-(1, 'game fifai', 'z5224831873968_b58eb6f2b5f57f722ffadaffce1c9c64.jpg', 'event'),
-(8, 'file', 'pexels-mateusz-dach-99805-409480.jpg', 'event');
 
 -- --------------------------------------------------------
 
@@ -79,7 +80,7 @@ CREATE TABLE `tbl_admin` (
 --
 
 INSERT INTO `tbl_admin` (`admin_id`, `username`, `password`, `status`) VALUES
-(1, 'admin', '1', 1);
+(1, 'EQN', '08072004', 1);
 
 -- --------------------------------------------------------
 
@@ -98,7 +99,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userName`, `passWord`, `Email`) VALUES
-('manhkien', '2042003', 'manhkien@gmail.com');
+('EQN', '08071701qt', 'quangtc2004@gmail.com'),
+('Nguyễn Văn Quang', '08071701qt', 'quang@gmail.com');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -136,7 +138,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `giftcode`
 --
 ALTER TABLE `giftcode`
-  MODIFY `giftCodeId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `giftCodeId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT cho bảng `news`
